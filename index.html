@@ -17,12 +17,16 @@
     <h1 id="what">What is this?</h1>
     <p>If-goto is a silly esolang created by <a href="https://github.com/hanamileh-DEV/">HanamileH</a> for some strange reason. As the name suggests, there are (approximately) two language constructs – <code>if</code> and <code>goto</code>.</p>
 
+    <p>Despite this seeming like a major limitation, if-goto has been shown to be <a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing Complete</a> (by me) using a <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a> to if-goto translator.</p>
+
+    <p>HanamileH has stated that the inspiration for if-goto came from three languages: Lua, Assembler, and Brainfuck.</p>
+
     <h1 id="how">How does it work?</h1>
-    <p>If-goto uses an arbitrarily long tape of byte-sized cells, much like <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a>. The current tape address starts at 0. Cells wrap around if they would go above 255 or below 0.</p>
+    <p>If-goto uses an arbitrarily long tape of byte-sized cells, much like Brainfuck. The current tape address starts at 0. Cells wrap around if they would go above 255 or below 0.</p>
 
     <p>Each line of if-goto code takes the form <code>if [condition]: [action]</code>, where <code>[condition]</code> and <code>[action]</code> are replaced with valid code. Lines are executed in order, and if the condition in a line is true, the action is performed.</p>
 
-    <p>Comments are supported, and start with <code>//</code></p>
+    <p>Comments are supported, and start with <code>//</code>.</p>
 
     <p>The valid conditions are:</p>
     <ul>
