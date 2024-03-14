@@ -1,1 +1,61 @@
-testing.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Goto</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+</head>
+<body>
+    <header>
+        <h1>The Officially Unofficial Home of the If-Goto Programming Language</h1>
+        <h2>~ soxfox</h2>
+    </header>
+
+    <h1 id="what">What is this?</h1>
+    <p>If-goto is a silly esolang created by <a href="https://github.com/hanamileh-DEV/">HanamileH</a> for some strange reason. As the name suggests, there are (approximately) two language constructs – <code>if</code> and <code>goto</code>.</p>
+
+    <h1 id="how">How does it work?</h1>
+    <p>If-goto uses an arbitrarily long tape of byte-sized cells, much like <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a>. The current tape address starts at 0. Cells wrap around if they would go above 255 or below 0.</p>
+
+    <p>Each line of if-goto code takes the form <code>if [condition]: [action]</code>, where <code>[condition]</code> and <code>[action]</code> are replaced with valid code. Lines are executed in order, and if the condition in a line is true, the action is performed.</p>
+
+    <p>Comments are supported, and start with <code>//</code></p>
+
+    <p>The valid conditions are:</p>
+    <ul>
+        <li><code>1</code> is always true.</li>
+        <li><code>0</code> is always false. There's no reason for this to exist.</li>
+        <li><code>ram [value]</code> is true if the current tape cell is equal to <code>[value]</code>.</li>
+        <li><code>adr [value]</code> is true if the current tape address is equal to <code>[value]</code>.</li>
+    </ul>
+
+    <p>The valid actions are:</p>
+    <ul>
+        <li><code>goto [line]</code> Jumps to the specified line (numbered from 1). See also <a href="#exit-codes">Exit Codes</a>.</li>
+        <li><code>ram</code> Writes the byte in the current cell to standard output.</li>
+        <li><code>&gt;ram</code> Reads a byte from standard input and stores it in the current cell.</li>
+        <li><code>ram++/ram--</code> Increments/decrements the byte in the current cell.</li>
+        <li><code>adr++/adr--</code> Increments/decrements the tape address.</li>
+    </ul>
+
+    <h2 id="exit-codes">Exit Codes</h2>
+
+    <p>If the program jumps to "line 0" it will instead exit successfully (exit code 0). If it jumps to a negative line it will exit unsuccessfully with the absolute value of that line as the exit code.</p>
+
+    <h1 id="where">Where can I get it?</h1>
+
+    <p><a href="interpreter.py">Right here!</a></p>
+    <p>You can also download the officially unofficial <a href="sample.igt">sample program</a>.</p>
+
+    <h1 id="why">Why?</h1>
+    
+    <p>That's a good question.</p>
+
+    <h1 id="unofficial">What do you mean "officially unofficial"?</h1>
+
+    <img src="official.png" alt="Screenshot of a Discord conversation where HanamileH agrees to allow soxfox42 to create officially unofficial if-goto content.">
+</body>
+</html>
